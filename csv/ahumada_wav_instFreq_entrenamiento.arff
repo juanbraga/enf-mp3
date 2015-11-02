@@ -1,4 +1,9 @@
-coef,etiqueta
+@relation ahumada_wav_instFreq_entrenamiento-weka.filters.unsupervised.attribute.NumericToNominal-R2
+
+@attribute coef numeric
+@attribute etiqueta {0,1}
+
+@data
 1.2108,0
 1.2108,0
 12.235,1
