@@ -3,7 +3,7 @@
 
 __./mp3readwrite__ contains code for reading and writing .mp3 files from matlab. Code developed by Dan Ellis, license details in ./mp3readwrite/license.txt file.
 
-__./csv__ contains results for analysis on weka
+__./csv & ./arff__ contains results for analysis on weka
 
 __./dataset__ contains files created with sinteticSignalsGenerator.m
 
