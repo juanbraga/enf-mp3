@@ -17,7 +17,9 @@ __enfMp3SinMain.m__ maltab code for spectral analysis of SIN + ENF syntethic fil
 
 __enMp3VozMain.m__ matlab code for spectral analysis of Voice(recorded) + ENF(synthetic) file
 
-__enftest_corpus.m__ matlab code for running ENF-based audio authencity algorithms [1,2] and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3] & carioca, not available in this repo, please email for more information.
+__enfPhaseEstimationTestCorpus.m__ matlab code for running ENF-based audio authencity algorithm via ENF phase estimation [1], and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3], not available in this repo, please email for more information.
+
+__instantaneousENFFrequencyVariationsTestCorpus.m__ matlab code for running ENF-based audio authencity algorithm via instantaneous ENF frequency variations [2], and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3], not available in this repo, please email for more information.
 
 __syntheticSignalsGeneration.m__ matlab code for generation of synth files. this are included in __./dataset__ directory
 
