@@ -1,5 +1,6 @@
 close all; clear all;
 addpath ./mp3readwrite/mp3readwrite/
+addpath ./functions/
 
 files_ahumada=dir('./corpus_ahumada/');
 for i=3:length(files_ahumada)
