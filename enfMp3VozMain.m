@@ -91,17 +91,23 @@ subplot(2,1,2), imagesc(T,F,10*log10(P_40dB_mp3)), axis xy,
 title('Espectrograma .mp3 30dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
 axis([0 max(T) 40 70]);
 
+%%
+
 figure('Name','Espectrograma (dB)'),
-subplot(5,1,[1 2]), imagesc(T,F,10*log10(P_50dB)), axis xy,
+ax(1)=subplot(5,1,[1 2]); imagesc(T,F,10*log10(P_50dB)), axis xy,
 title('Espectrograma 35dB'), 
-xlabel('Tiempo(s)'), ylabel('[.wav] Frecuencia(Hz)'),
+% xlabel('Tiempo(s)'), 
+ylabel('[.wav] Frecuencia(Hz)'),
 axis([0 max(T) 40 70]);
-subplot(5,1,[3 4]), imagesc(T,F,10*log10(P_50dB_mp3)), axis xy,
+ax(2)=subplot(5,1,[3 4]); imagesc(T,F,10*log10(P_50dB_mp3)), axis xy,
 % title('Espectrograma .mp3 35dB'), 
-xlabel('Tiempo(s)'), ylabel('[.mp3] Frecuencia(Hz)'),
+% xlabel('Tiempo(s)'), 
+ylabel('[.mp3] Frecuencia(Hz)'),
 axis([0 max(T) 40 70]);
-subplot(5,1,5), plot(t(t==T), senal_35dB(t==T),'r'), xlabel('Tiempo(s)'), ylabel('Amplitud'), 
-grid on;
+ax(3)=subplot(5,1,5); plot(t, senal_35dB,'r'), xlabel('Tiempo(s)'), ylabel('Amplitud'), 
+grid on, linkaxes(ax,'x');
+
+%%
 
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_60dB)), axis xy,
