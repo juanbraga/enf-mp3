@@ -9,7 +9,13 @@ __./dataset__ contains files created with sinteticSignalsGenerator.m
 
 __./functions__ contains needed functions for main scripts
 
+__ahumadaENFAtenuation.m__ matlab code for ENF atenuation by notch filtering @50Hz
+
 __convert_corpus_mp3.sh__ bash script for conversion of corpus ahumada[2] & carioca to .mp3 with LAME MP3 Econder (previous installation needed)
+
+__enfInstFreqVarTestCorpus.m__ matlab code for running ENF-based audio authencity algorithm via instantaneous ENF frequency variations [2], and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3], not available in this repo, please email for more information.
+
+__enfInstFreqVarTestFilteredCorpus.m__ same as above script but this runs over notch filtered @50Hz corpus ahumada[3], also not available in this repo, please email for more information.
 
 __enfMp3ChirpMain.m__ matlab code for spectral analysis of CHIRP + ENF synthetic file
 
@@ -19,7 +25,7 @@ __enMp3VozMain.m__ matlab code for spectral analysis of Voice(recorded) + ENF(sy
 
 __enfPhaseEstimationTestCorpus.m__ matlab code for running ENF-based audio authencity algorithm via ENF phase estimation [1], and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3], not available in this repo, please email for more information.
 
-__instantaneousENFFrequencyVariationsTestCorpus.m__ matlab code for running ENF-based audio authencity algorithm via instantaneous ENF frequency variations [2], and exporting results on .csv files for Weka analysis. this runs over corpus ahumada[3], not available in this repo, please email for more information.
+__enfPhaseEstimationTestFilteredCorpus.m__ same as above script but runs over notch filtered @50Hz corpus ahumada[3], also not available in this repo, please email for more information.
 
 __syntheticSignalsGeneration.m__ matlab code for generation of synth files. this are included in __./dataset__ directory
 
