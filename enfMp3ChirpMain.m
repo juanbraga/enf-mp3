@@ -20,14 +20,14 @@ senal_40dB_mp3=mp3read('./dataset/chirp/senal_40dB.mp3');
 window_length = 2*16*2048;
 n_step = 4*256;
 nfft = 2*window_length;
-n_overlap = 3*window_length/2; 
+n_overlap = 3*window_length/4; 
 
 % Espectrogramas senales .wav
-[S_20dB,F,T,P_20dB] = spectrogram(senal_20dB,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_30dB,F,T,P_30dB] = spectrogram(senal_25dB,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_40dB,F,T,P_40dB] = spectrogram(senal_30dB,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_50dB,F,T,P_50dB] = spectrogram(senal_35dB,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_60dB,F,T,P_60dB] = spectrogram(senal_40dB,hanning(nfft),n_overlap,nfft,fs,'yaxis');
+[S_20dB,F,T,P_20dB] = spectrogram(senal_20dB,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_30dB,F,T,P_30dB] = spectrogram(senal_25dB,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_40dB,F,T,P_40dB] = spectrogram(senal_30dB,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_50dB,F,T,P_50dB] = spectrogram(senal_35dB,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_60dB,F,T,P_60dB] = spectrogram(senal_40dB,hanning(window_length),n_overlap,nfft,fs,'yaxis');
 
 % figure('Name','Espectrograma .wav (dB)'),
 % subplot(2,2,1), imagesc(T,F,10*log10(P_20dB)), axis xy,
@@ -45,11 +45,11 @@ n_overlap = 3*window_length/2;
 
 
 % Espectrogramas senales .mp3
-[S_20dB_mp3,F,T,P_20dB_mp3] = spectrogram(senal_20dB_mp3,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_30dB_mp3,F,T,P_30dB_mp3] = spectrogram(senal_25dB_mp3,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_40dB_mp3,F,T,P_40dB_mp3] = spectrogram(senal_30dB_mp3,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_50dB_mp3,F,T,P_50dB_mp3] = spectrogram(senal_35dB_mp3,hanning(nfft),n_overlap,nfft,fs,'yaxis');
-[S_60dB_mp3,F,T,P_60dB_mp3] = spectrogram(senal_40dB_mp3,hanning(nfft),n_overlap,nfft,fs,'yaxis');
+[S_20dB_mp3,F,T,P_20dB_mp3] = spectrogram(senal_20dB_mp3,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_30dB_mp3,F,T,P_30dB_mp3] = spectrogram(senal_25dB_mp3,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_40dB_mp3,F,T,P_40dB_mp3] = spectrogram(senal_30dB_mp3,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_50dB_mp3,F,T,P_50dB_mp3] = spectrogram(senal_35dB_mp3,hanning(window_length),n_overlap,nfft,fs,'yaxis');
+[S_60dB_mp3,F,T,P_60dB_mp3] = spectrogram(senal_40dB_mp3,hanning(window_length),n_overlap,nfft,fs,'yaxis');
 
 % figure('Name','Espectrograma .mp3 (dB)'),
 % subplot(2,2,1), imagesc(T,F,10*log10(P_20dB_mp3)), axis xy,
@@ -70,39 +70,39 @@ n_overlap = 3*window_length/2;
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_20dB)), axis xy,
 title('Espectrograma .wav 20dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 subplot(2,1,2), imagesc(T,F,10*log10(P_20dB_mp3)), axis xy,
 title('Espectrograma .mp3 20dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_30dB)), axis xy,
 title('Espectrograma .wav 25dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 subplot(2,1,2), imagesc(T,F,10*log10(P_30dB_mp3)), axis xy,
 title('Espectrograma .mp3 25dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_40dB)), axis xy,
 title('Espectrograma .wav 30dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 subplot(2,1,2), imagesc(T,F,10*log10(P_40dB_mp3)), axis xy,
 title('Espectrograma .mp3 30dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_50dB)), axis xy,
 title('Espectrograma .wav 40dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 subplot(2,1,2), imagesc(T,F,10*log10(P_50dB_mp3)), axis xy,
 title('Espectrograma .mp3 40dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 
 figure('Name','Espectrograma (dB)'),
 subplot(2,1,1), imagesc(T,F,10*log10(P_60dB)), axis xy,
 title('Espectrograma .wav 45dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);
 subplot(2,1,2), imagesc(T,F,10*log10(P_60dB_mp3)), axis xy,
 title('Espectrograma .mp3 45dB'), xlabel('Tiempo(s)'), ylabel('Frecuencia(Hz)'),
-axis([0 max(T) 40 300]);
+axis([0 max(T) 40 400]);

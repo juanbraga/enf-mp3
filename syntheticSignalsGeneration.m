@@ -56,7 +56,7 @@ f_enf=50; %hz
 
 % CHIRP
 a_ch=0.9;
-f_final=10000;
+f_final=1000;
 ch=a_ch*chirp(t,20,t_final,f_final);
 
 a_enf_20dB=a_ch/100;
