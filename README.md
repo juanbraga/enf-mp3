@@ -7,8 +7,6 @@ __./csv & ./arff__ contains results for analysis on weka
 
 __./dataset__ contains files created with sinteticSignalsGenerator.m
 
-__./functions__ contains needed functions for main scripts
-
 __ahumadaENFAtenuation.m__ matlab code for ENF atenuation by notch filtering @50Hz
 
 __convert_corpus_mp3.sh__ bash script for conversion of corpus ahumada[2] & carioca to .mp3 with LAME MP3 Econder (previous installation needed)
